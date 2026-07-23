@@ -89,3 +89,4 @@ E:\Study\AvaloniaTest\obj\x64\Debug\net9.0\refint\AvaloniaTest.dll
 E:\Study\AvaloniaTest\obj\x64\Debug\net9.0\AvaloniaTest.pdb
 E:\Study\AvaloniaTest\obj\x64\Debug\net9.0\AvaloniaTest.genruntimeconfig.cache
 E:\Study\AvaloniaTest\obj\x64\Debug\net9.0\ref\AvaloniaTest.dll
+E:\Study\AvaloniaTest\obj\x64\Debug\net9.0\AvaloniaTest.sourcelink.json

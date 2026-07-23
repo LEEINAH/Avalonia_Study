@@ -5,35 +5,12 @@
         mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
         x:Class="AvaloniaTest.MainWindow"
         Title="AvaloniaTest">
-    <Border Padding="20">
-        <StackPanel Spacing="10">
-            <StackPanel.Styles>
-                <!-- CSS의 .my-card {...} 역할 -->
-                <Style Selector="Border.my-card">
-                    <Setter Property="Background" Value="#F3F3F3" />
-                    <Setter Property="CornerRadius" Value="8" />
-                    <Setter Property="Padding" Value="15" />
-                </Style>
-
-                <!-- CSS의 button.btn-primary:hover {...} 역할 -->
-                <Style Selector="Button.btn-primary:pointerover">
-                    <Setter Property="Background" Value="#005A9E" />
-                </Style>
-
-                <Style Selector="Button.btn-primary">
-                    <Setter Property="Background" Value="#0078D4" />
-                    <Setter Property="Foreground" Value="White" />
-                    <Setter Property="CornerRadius" Value="4" />
-                </Style>
-            </StackPanel.Styles>
-
-            <!-- 카드 스타일이 적용된 Border -->
-            <Border Classes="my-card">
-                <StackPanel Spacing="10">
-                    <TextBlock Text="스타일 테스트 카드" FontWeight="Bold" />
-                    <Button Content="버튼 스타일 적용" Classes="btn-primary" />
-                </StackPanel>
-            </Border>
-        </StackPanel>
-    </Border>
+    <StackPanel Margin="20" Spacing="10">
+        <!-- C#에서 다룰 수 있도록 x:Name 지정 -->
+        <TextBlock x:Name="MyTextBlock" 
+                   Text="버튼을 눌러보세요!" FontSize="18" />
+        <!-- Click 이벤트를 C# 메서드와 연결 -->
+        <Button Content="텍스트 변경"
+                Click="OnButtonClick" />
+    </StackPanel>
 </Window>
