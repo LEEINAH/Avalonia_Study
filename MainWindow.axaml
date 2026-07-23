@@ -5,32 +5,35 @@
         mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
         x:Class="AvaloniaTest.MainWindow"
         Title="AvaloniaTest">
-    <Grid RowDefinitions="Auto, *, Auto" ColumnDefinitions="2*, 1*">
-        <!-- Header (0행, 전체 2열 병합) -->
-        <Border Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2"
-                Background="#2D2D30" Padding="10">
-            <TextBlock Text="내 애플리케이션 상단바" Foreground="White" />
-        </Border>
+    <Border Padding="20">
+        <StackPanel Spacing="10">
+            <StackPanel.Styles>
+                <!-- CSS의 .my-card {...} 역할 -->
+                <Style Selector="Border.my-card">
+                    <Setter Property="Background" Value="#F3F3F3" />
+                    <Setter Property="CornerRadius" Value="8" />
+                    <Setter Property="Padding" Value="15" />
+                </Style>
 
-        <!-- Main Content (1행 0열) -->
-        <!-- '*'는 남은 공간을 비율대로 채운다는 뜻 (2*:1* 비율) -->
-        <Canvas Grid.Row="1" Grid.Column="0" Background="#1E1E1E">
-            <TextBlock Text="여기에 드로잉 캔버스가 들어갑니다" Foreground="Gray" Canvas.Left="20" Canvas.Top="20" />
-        </Canvas>
+                <!-- CSS의 button.btn-primary:hover {...} 역할 -->
+                <Style Selector="Button.btn-primary:pointerover">
+                    <Setter Property="Background" Value="#005A9E" />
+                </Style>
 
-        <!-- Sidebar (1행 1열) -->
-        <Border Grid.Row="1" Grid.Column="1" Background="#252526" Padding="10">
-            <StackPanel Spacing="8">
-                <TextBlock Text="도구 상자" Foreground="White" FontWeight="Bold" />
-                <Button Content="선 그리기" HorizontalAlignment="Stretch" />
-                <Button Content="사각형 그리기" HorizontalAlignment="Stretch" />
-            </StackPanel>
-        </Border>        
+                <Style Selector="Button.btn-primary">
+                    <Setter Property="Background" Value="#0078D4" />
+                    <Setter Property="Foreground" Value="White" />
+                    <Setter Property="CornerRadius" Value="4" />
+                </Style>
+            </StackPanel.Styles>
 
-        <!-- Footer (2행, 전체 2열 병합) -->
-        <Border Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="2"
-                Background="#007ACC" Padding="5">
-            <TextBlock Text="상태: 준비 됨" Foreground="White" FontSize="12" />
-        </Border>
-    </Grid>
+            <!-- 카드 스타일이 적용된 Border -->
+            <Border Classes="my-card">
+                <StackPanel Spacing="10">
+                    <TextBlock Text="스타일 테스트 카드" FontWeight="Bold" />
+                    <Button Content="버튼 스타일 적용" Classes="btn-primary" />
+                </StackPanel>
+            </Border>
+        </StackPanel>
+    </Border>
 </Window>
