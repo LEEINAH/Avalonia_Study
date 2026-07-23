@@ -5,12 +5,8 @@
         mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
         x:Class="AvaloniaTest.MainWindow"
         Title="AvaloniaTest">
-    <StackPanel Margin="20" Spacing="10">
-        <!-- C#에서 다룰 수 있도록 x:Name 지정 -->
-        <TextBlock x:Name="MyTextBlock" 
-                   Text="버튼을 눌러보세요!" FontSize="18" />
-        <!-- Click 이벤트를 C# 메서드와 연결 -->
-        <Button Content="텍스트 변경"
-                Click="OnButtonClick" />
-    </StackPanel>
+    <Grid RowDefinitions="Auto, *">
+        <Button Grid.Row="0" Content="사각형 생성" Margin="10" Click="OnAddRectangleClick" />
+        <Canvas Grid.Row="1" x:Name="MyCanvas" Background="#222222" />
+    </Grid>
 </Window>
