@@ -5,8 +5,12 @@
         mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
         x:Class="AvaloniaTest.MainWindow"
         Title="AvaloniaTest">
-    <Grid RowDefinitions="Auto, *">
-        <Button Grid.Row="0" Content="사각형 생성" Margin="10" Click="OnAddRectangleClick" />
-        <Canvas Grid.Row="1" x:Name="MyCanvas" Background="#222222" />
+    <Grid RowDefinitions="*">
+        <Canvas Grid.Row="1" x:Name="MyCanvas" 
+                Background="Transparent" 
+                ClipToBounds="True"
+                PointerPressed="OnCanvasPointerPressed" 
+                PointerMoved="OnCanvasPointerMoved"
+                PointerReleased="OnCanvasPointerReleased" />
     </Grid>
 </Window>
